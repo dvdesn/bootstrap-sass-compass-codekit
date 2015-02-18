@@ -1,0 +1,15 @@
+@import "compass";
+@import "bootstrap";
+@import "mystyles/my-mixins";
+@import "mystyles/my-mixins-minor";
+
+.sass-sample {
+	@include square(320px);
+	@include border-radius(50%);
+	background:hsl(195, 100%, 80%);
+	padding:10% 2%;
+	margin: 20px auto;
+	color:#fff;
+	font-weight:bold;
+	// @include opacity(0.7);
+}

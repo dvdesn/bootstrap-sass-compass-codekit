@@ -1,0 +1,143 @@
+@import "mystyles/respond-to";
+
+// Function: Simulate associative arrays
+// Authour: Hugo Giraudel
+// Source: http://hugogiraudel.com/2013/08/12/sass-functions/#mapping
+@function match($haystack, $needle) {
+  @each $item in $haystack {
+    $index: index($item, $needle);
+    @if $index {
+      $return: if($index == 1, 2, $index);
+      @return nth($item, $return);
+    }
+  }
+  @return false;
+}
+ 
+// Usage
+/* 
+$list: a b, c d, e f;
+$value: match($list, e); //returns f 
+*/
+
+// Calculate width of a column
+// Default value of maximum columns is 12
+@mixin col($col, $max-cols: 12) {
+  width: (100%/$max-cols)*$col;
+}
+ 
+// Usage
+/* .element {
+    @include col(3);
+} */
+ 
+// Result
+/* .element {
+    width: 25%;
+} */
+
+// Mixin
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+ 
+// Usage
+/* .element {
+    @include font-size(1.8);
+} */
+ 
+// Result
+/* .element {
+    font-size: 18px;
+    font-size: 1.8rem;
+} */
+
+// Mixin
+@mixin font-face($name, $url) {
+  @font-face {
+    font-family: #{$name};
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot#iefix') format("embedded-opentype"),
+         url('#{$url}.ttf') format('truetype'),
+         url('#{$url}.svg##{$name}') format('svg'),
+         url('#{$url}.woff') format('woff');
+ 
+    @content;
+  }
+}
+ 
+// Usage
+/* @include font-face('icons', '../fonts/icons/iconfont');
+ */ 
+// Result
+/* @font-face {
+  font-family: icons;
+  src: url("../fonts/icons/iconfont.eot");
+  src: url("../fonts/icons/iconfont.eot#iefix") format("embedded-opentype"), 
+       url("../fonts/icons/iconfont.ttf") format("truetype"), 
+       url("../fonts/icons/iconfont.svg#icons") format("svg"), 
+       url("../fonts/icons/iconfont.woff") format("woff");
+} */
+
+// Author: Jayden Seric
+// Source: http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+@mixin icon($position: 'before', $icon: false) {
+  &:#{$position} {
+    @if $icon {
+        content: match($icons, $icon);
+    }
+    @content;
+  }
+}
+ 
+// Usage
+// Create a variable with all your icons
+// Name, Content-Value
+/* $icons: (
+    'checkmark' 'a',
+    'minus' 'b',
+    'plus' 'c'
+); */
+ 
+// Include mixin
+/* .element {
+    @include icon('before', 'checkmark');
+} */
+ 
+// Result
+/* .element:before {
+  content: "a";
+} */
+
+
+//------------------------------------------------------------------------------
+// Use mixin by Snugug
+// URL: https://gist.github.com/Snugug/2493551
+ 
+// Define your breakpoints and give each one a name
+$breakpoints: (
+  'small' 481px,
+  'medium' 600px,
+  'large' 769px
+);
+ 
+// Usage
+/* .element {
+    background: red;
+     
+    @include respond-to('medium') {
+        background: blue;
+    }
+} */
+ 
+// Result
+/* .element {
+    background: red;
+}
+ 
+@media screen and (min-width: 600px) {
+    .element {
+        background: blue;
+    }
+} */
