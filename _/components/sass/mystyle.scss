@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "mystyles/my-mixins";
 @import "mystyles/my-mixins-minor";
+@import "mystyles/typography";
 
 .sass-sample {
 	@include square(320px);
@@ -11,5 +12,14 @@
 	margin: 20px auto;
 	color:#fff;
 	font-weight:bold;
+	@include respond-to('small') {
+        background: green;
+    }
+	 @include respond-to('medium') {
+        background: blue;
+    }
+     @include respond-to('large') {
+        background: purple;
+    }
 	// @include opacity(0.7);
 }

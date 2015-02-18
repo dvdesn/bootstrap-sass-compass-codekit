@@ -1383,22 +1383,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/_\/components\/sass\/mystyles\/_mymixins.scss": {
-		"createSourceMap": 0,
-		"debugStyle": 0,
-		"decimalPrecision": 10,
-		"fileType": 4,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/_\/components\/sass\/mystyles\/_mymixins.scss",
-		"outputAbbreviatedPath": "\/_\/css\/_mymixins.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
 	"\/_\/components\/sass\/mystyles\/_respond-to.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -1408,6 +1392,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_\/components\/sass\/mystyles\/_respond-to.scss",
 		"outputAbbreviatedPath": "\/_\/css\/_respond-to.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/_\/components\/sass\/mystyles\/_typography.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_\/components\/sass\/mystyles\/_typography.scss",
+		"outputAbbreviatedPath": "\/_\/css\/_typography.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1538,9 +1538,9 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "bs-s-ck",
+	"displayValue": "bs-s-c-ck",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "brackets_blue"
+	"iconImageName": "meme-wonka"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
